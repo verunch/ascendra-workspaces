@@ -1,0 +1,92 @@
+[
+{
+"id": "vm-001", "name": "priya-backend-api", "ownerId": "usr-001", "templateId": "tmpl-004",
+"status": "running", "region": "us-east-1",
+"createdAt": "2026-04-02T14:10:00Z", "startedAt": "2026-07-01T08:05:00Z", "lastActiveAt": "2026-07-01T17:52:00Z",
+"cpuUsagePercent": 62, "memoryUsagePercent": 71, "diskUsagePercent": 45, "hourlyCost": 0.384
+},
+{
+"id": "vm-002", "name": "priya-scratch-sandbox", "ownerId": "usr-001", "templateId": "tmpl-001",
+"status": "stopped", "region": "us-east-1",
+"createdAt": "2026-05-10T09:00:00Z", "startedAt": null, "lastActiveAt": "2026-06-27T16:40:00Z",
+"cpuUsagePercent": 0, "memoryUsagePercent": 0, "diskUsagePercent": 22, "hourlyCost": 0.192
+},
+{
+"id": "vm-003", "name": "marcus-ml-train-primary", "ownerId": "usr-002", "templateId": "tmpl-002",
+"status": "running", "region": "us-west-2",
+"createdAt": "2026-03-18T11:20:00Z", "startedAt": "2026-07-01T06:00:00Z", "lastActiveAt": "2026-07-01T17:59:00Z",
+"cpuUsagePercent": 94, "memoryUsagePercent": 88, "diskUsagePercent": 67, "hourlyCost": 1.848
+},
+{
+"id": "vm-004", "name": "marcus-ml-train-secondary", "ownerId": "usr-002", "templateId": "tmpl-002",
+"status": "running", "region": "us-west-2",
+"createdAt": "2026-04-22T10:00:00Z", "startedAt": "2026-06-30T09:00:00Z", "lastActiveAt": "2026-06-30T09:45:00Z",
+"cpuUsagePercent": 11, "memoryUsagePercent": 24, "diskUsagePercent": 30, "hourlyCost": 1.848
+},
+{
+"id": "vm-005", "name": "elena-frontend-main", "ownerId": "usr-003", "templateId": "tmpl-003",
+"status": "running", "region": "us-east-1",
+"createdAt": "2026-02-14T13:30:00Z", "startedAt": "2026-07-01T09:00:00Z", "lastActiveAt": "2026-07-01T17:40:00Z",
+"cpuUsagePercent": 18, "memoryUsagePercent": 33, "diskUsagePercent": 12, "hourlyCost": 0.096
+},
+{
+"id": "vm-006", "name": "elena-frontend-preview", "ownerId": "usr-003", "templateId": "tmpl-003",
+"status": "starting", "region": "us-east-1",
+"createdAt": "2026-06-29T15:00:00Z", "startedAt": null, "lastActiveAt": "2026-06-29T15:05:00Z",
+"cpuUsagePercent": 0, "memoryUsagePercent": 0, "diskUsagePercent": 8, "hourlyCost": 0.096
+},
+{
+"id": "vm-007", "name": "diego-platform-core", "ownerId": "usr-004", "templateId": "tmpl-004",
+"status": "running", "region": "us-east-1",
+"createdAt": "2026-01-09T08:00:00Z", "startedAt": "2026-07-01T07:15:00Z", "lastActiveAt": "2026-07-01T17:55:00Z",
+"cpuUsagePercent": 55, "memoryUsagePercent": 60, "diskUsagePercent": 80, "hourlyCost": 0.384
+},
+{
+"id": "vm-008", "name": "sarah-data-notebook", "ownerId": "usr-005", "templateId": "tmpl-005",
+"status": "running", "region": "eu-west-1",
+"createdAt": "2026-03-30T12:00:00Z", "startedAt": "2026-07-01T08:30:00Z", "lastActiveAt": "2026-07-01T17:58:00Z",
+"cpuUsagePercent": 71, "memoryUsagePercent": 66, "diskUsagePercent": 58, "hourlyCost": 0.416
+},
+{
+"id": "vm-009", "name": "sarah-data-batch", "ownerId": "usr-005", "templateId": "tmpl-005",
+"status": "stopping", "region": "eu-west-1",
+"createdAt": "2026-05-05T10:00:00Z", "startedAt": "2026-07-01T06:00:00Z", "lastActiveAt": "2026-07-01T17:20:00Z",
+"cpuUsagePercent": 5, "memoryUsagePercent": 12, "diskUsagePercent": 58, "hourlyCost": 0.416
+},
+{
+"id": "vm-010", "name": "james-mobile-dev", "ownerId": "usr-006", "templateId": "tmpl-001",
+"status": "running", "region": "us-east-1",
+"createdAt": "2026-02-28T09:00:00Z", "startedAt": "2026-06-29T10:00:00Z", "lastActiveAt": "2026-06-29T11:10:00Z",
+"cpuUsagePercent": 8, "memoryUsagePercent": 15, "diskUsagePercent": 9, "hourlyCost": 0.192
+},
+{
+"id": "vm-011", "name": "aisha-devex-tooling", "ownerId": "usr-007", "templateId": "tmpl-001",
+"status": "error", "region": "us-east-1",
+"createdAt": "2026-07-01T16:50:00Z", "startedAt": null, "lastActiveAt": "2026-07-01T16:50:00Z",
+"cpuUsagePercent": 0, "memoryUsagePercent": 0, "diskUsagePercent": 5, "hourlyCost": 0.192
+},
+{
+"id": "vm-012", "name": "tom-intern-sandbox", "ownerId": "usr-008", "templateId": "tmpl-001",
+"status": "running", "region": "us-east-1",
+"createdAt": "2026-06-15T09:00:00Z", "startedAt": "2026-07-01T09:30:00Z", "lastActiveAt": "2026-07-01T17:45:00Z",
+"cpuUsagePercent": 40, "memoryUsagePercent": 45, "diskUsagePercent": 20, "hourlyCost": 0.192
+},
+{
+"id": "vm-013", "name": "priya-backend-load-test", "ownerId": "usr-001", "templateId": "tmpl-004",
+"status": "running", "region": "us-east-1",
+"createdAt": "2026-06-20T14:00:00Z", "startedAt": "2026-07-01T10:00:00Z", "lastActiveAt": "2026-07-01T17:57:00Z",
+"cpuUsagePercent": 78, "memoryUsagePercent": 82, "diskUsagePercent": 50, "hourlyCost": 0.384
+},
+{
+"id": "vm-014", "name": "legacy-build-runner-07", "ownerId": "usr-099", "templateId": "tmpl-001",
+"status": "stopped", "region": "us-east-1",
+"createdAt": "2025-11-03T09:00:00Z", "startedAt": null, "lastActiveAt": "2026-05-02T08:15:00Z",
+"cpuUsagePercent": 0, "memoryUsagePercent": 0, "diskUsagePercent": 91, "hourlyCost": 0.192
+},
+{
+"id": "vm-015", "name": "marcus-ml-train-archive", "ownerId": "usr-002", "templateId": "tmpl-002",
+"status": "stopped", "region": "us-west-2",
+"createdAt": "2026-01-20T10:00:00Z", "startedAt": null, "lastActiveAt": "2026-04-18T13:00:00Z",
+"cpuUsagePercent": 0, "memoryUsagePercent": 0, "diskUsagePercent": 95, "hourlyCost": 1.848
+}
+]

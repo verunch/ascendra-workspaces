@@ -1,0 +1,52 @@
+[
+{
+"id": "tmpl-001",
+"name": "Standard Dev",
+"description": "General-purpose development box for day-to-day work.",
+"baseImage": "ubuntu-22.04",
+"vCpu": 4,
+"memoryGb": 16,
+"diskSizeGb": 100,
+"preinstalledTools": ["vscode-server", "docker", "git", "node"]
+},
+{
+"id": "tmpl-002",
+"name": "ML Training Heavy",
+"description": "High-memory, high-core box for model training and large batch jobs.",
+"baseImage": "ubuntu-22.04",
+"vCpu": 16,
+"memoryGb": 64,
+"diskSizeGb": 500,
+"preinstalledTools": ["vscode-server", "docker", "python3.11", "cuda-12.2", "jupyter"]
+},
+{
+"id": "tmpl-003",
+"name": "Frontend Lite",
+"description": "Lightweight box for frontend and design-system work.",
+"baseImage": "ubuntu-22.04",
+"vCpu": 2,
+"memoryGb": 8,
+"diskSizeGb": 50,
+"preinstalledTools": ["vscode-server", "node", "npm"]
+},
+{
+"id": "tmpl-004",
+"name": "Backend Standard",
+"description": "Mid-tier box for backend services and integration testing.",
+"baseImage": "ubuntu-22.04",
+"vCpu": 8,
+"memoryGb": 32,
+"diskSizeGb": 200,
+"preinstalledTools": ["vscode-server", "docker", "go", "postgres-client"]
+},
+{
+"id": "tmpl-005",
+"name": "Data Science",
+"description": "Balanced box for data analysis, notebooks, and ETL work.",
+"baseImage": "ubuntu-22.04",
+"vCpu": 8,
+"memoryGb": 32,
+"diskSizeGb": 250,
+"preinstalledTools": ["vscode-server", "python3.11", "jupyter", "docker"]
+}
+]

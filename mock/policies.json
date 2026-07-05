@@ -1,0 +1,30 @@
+
+[
+{
+"id": "pol-001",
+"name": "Default Engineering Policy",
+"maxVmsPerUser": 2,
+"idleTimeoutMinutes": 60,
+"allowedTemplateIds": ["tmpl-001", "tmpl-003", "tmpl-004"],
+"appliesToTeam": "Engineering",
+"createdAt": "2026-01-05T09:00:00Z"
+},
+{
+"id": "pol-002",
+"name": "ML & Data Policy",
+"maxVmsPerUser": 3,
+"idleTimeoutMinutes": 120,
+"allowedTemplateIds": ["tmpl-002", "tmpl-005"],
+"appliesToTeam": "ML & Data",
+"createdAt": "2026-01-05T09:00:00Z"
+},
+{
+"id": "pol-003",
+"name": "Internship Program Policy",
+"maxVmsPerUser": 1,
+"idleTimeoutMinutes": 30,
+"allowedTemplateIds": ["tmpl-001", "tmpl-003"],
+"appliesToTeam": "Internship Program",
+"createdAt": "2026-06-01T09:00:00Z"
+}
+]

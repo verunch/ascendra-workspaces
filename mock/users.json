@@ -1,0 +1,13 @@
+[
+{ "id": "usr-001", "name": "Priya Raman", "email": "priya.raman@ascendra.dev", "role": "engineer", "vmCount": 3 },
+{ "id": "usr-002", "name": "Marcus Chen", "email": "marcus.chen@ascendra.dev", "role": "engineer", "vmCount": 3 },
+{ "id": "usr-003", "name": "Elena Petrova", "email": "elena.petrova@ascendra.dev", "role": "engineer", "vmCount": 2 },
+{ "id": "usr-004", "name": "Diego Alvarez", "email": "diego.alvarez@ascendra.dev", "role": "engineer", "vmCount": 1 },
+{ "id": "usr-005", "name": "Sarah Kim", "email": "sarah.kim@ascendra.dev", "role": "engineer", "vmCount": 2 },
+{ "id": "usr-006", "name": "James O'Connell", "email": "james.oconnell@ascendra.dev", "role": "engineer", "vmCount": 1 },
+{ "id": "usr-007", "name": "Aisha Bello", "email": "aisha.bello@ascendra.dev", "role": "engineer", "vmCount": 1 },
+{ "id": "usr-008", "name": "Tom Nakamura", "email": "tom.nakamura@ascendra.dev", "role": "engineer", "vmCount": 1 },
+{ "id": "usr-101", "name": "Rachel Sanders", "email": "rachel.sanders@ascendra.dev", "role": "admin", "vmCount": 0 },
+{ "id": "usr-102", "name": "Victor Osei", "email": "victor.osei@ascendra.dev", "role": "admin", "vmCount": 0 },
+{ "id": "usr-103", "name": "Naomi Fischer", "email": "naomi.fischer@ascendra.dev", "role": "admin", "vmCount": 0 }
+]

@@ -1,0 +1,161 @@
+{
+  "period": "real-time",
+  "totalVms": 15,
+  "runningVms": 9,
+  "stoppedVms": 3,
+  "totalUsers": 8,
+  "avgCpuUtilizationPercent": 48.6,
+  "peakCpuUtilizationPercent": 94,
+  "avgMemoryUtilizationPercent": 53.8,
+  "peakMemoryUtilizationPercent": 88,
+  "totalHourlyCost": 6.26,
+  "monthToDateCost": 2340.75,
+  "projectedMonthlyCost": 4507.2,
+
+  "utilizationTrend": [
+    {
+      "timestamp": "2026-07-01T00:00:00Z",
+      "cpuPercent": 22,
+      "memoryPercent": 30,
+      "runningVms": 5
+    },
+    {
+      "timestamp": "2026-07-01T01:00:00Z",
+      "cpuPercent": 19,
+      "memoryPercent": 28,
+      "runningVms": 5
+    },
+    {
+      "timestamp": "2026-07-01T02:00:00Z",
+      "cpuPercent": 15,
+      "memoryPercent": 25,
+      "runningVms": 4
+    },
+    {
+      "timestamp": "2026-07-01T03:00:00Z",
+      "cpuPercent": 12,
+      "memoryPercent": 22,
+      "runningVms": 4
+    },
+    {
+      "timestamp": "2026-07-01T04:00:00Z",
+      "cpuPercent": 10,
+      "memoryPercent": 20,
+      "runningVms": 3
+    },
+    {
+      "timestamp": "2026-07-01T05:00:00Z",
+      "cpuPercent": 14,
+      "memoryPercent": 21,
+      "runningVms": 4
+    },
+    {
+      "timestamp": "2026-07-01T06:00:00Z",
+      "cpuPercent": 28,
+      "memoryPercent": 34,
+      "runningVms": 6
+    },
+    {
+      "timestamp": "2026-07-01T07:00:00Z",
+      "cpuPercent": 39,
+      "memoryPercent": 42,
+      "runningVms": 7
+    },
+    {
+      "timestamp": "2026-07-01T08:00:00Z",
+      "cpuPercent": 51,
+      "memoryPercent": 55,
+      "runningVms": 8
+    },
+    {
+      "timestamp": "2026-07-01T09:00:00Z",
+      "cpuPercent": 58,
+      "memoryPercent": 61,
+      "runningVms": 9
+    },
+    {
+      "timestamp": "2026-07-01T10:00:00Z",
+      "cpuPercent": 63,
+      "memoryPercent": 66,
+      "runningVms": 9
+    },
+    {
+      "timestamp": "2026-07-01T11:00:00Z",
+      "cpuPercent": 67,
+      "memoryPercent": 70,
+      "runningVms": 10
+    },
+    {
+      "timestamp": "2026-07-01T12:00:00Z",
+      "cpuPercent": 60,
+      "memoryPercent": 64,
+      "runningVms": 9
+    },
+    {
+      "timestamp": "2026-07-01T13:00:00Z",
+      "cpuPercent": 55,
+      "memoryPercent": 60,
+      "runningVms": 9
+    },
+    {
+      "timestamp": "2026-07-01T14:00:00Z",
+      "cpuPercent": 62,
+      "memoryPercent": 65,
+      "runningVms": 9
+    },
+    {
+      "timestamp": "2026-07-01T15:00:00Z",
+      "cpuPercent": 66,
+      "memoryPercent": 69,
+      "runningVms": 9
+    },
+    {
+      "timestamp": "2026-07-01T16:00:00Z",
+      "cpuPercent": 59,
+      "memoryPercent": 63,
+      "runningVms": 9
+    },
+    {
+      "timestamp": "2026-07-01T17:00:00Z",
+      "cpuPercent": 52,
+      "memoryPercent": 57,
+      "runningVms": 9
+    },
+    {
+      "timestamp": "2026-07-01T18:00:00Z",
+      "cpuPercent": 48,
+      "memoryPercent": 54,
+      "runningVms": 9
+    },
+    {
+      "timestamp": "2026-06-30T19:00:00Z",
+      "cpuPercent": 40,
+      "memoryPercent": 47,
+      "runningVms": 8
+    },
+    {
+      "timestamp": "2026-06-30T20:00:00Z",
+      "cpuPercent": 34,
+      "memoryPercent": 41,
+      "runningVms": 7
+    },
+    {
+      "timestamp": "2026-06-30T21:00:00Z",
+      "cpuPercent": 29,
+      "memoryPercent": 37,
+      "runningVms": 6
+    },
+    {
+      "timestamp": "2026-06-30T22:00:00Z",
+      "cpuPercent": 25,
+      "memoryPercent": 33,
+      "runningVms": 6
+    },
+    {
+      "timestamp": "2026-06-30T23:00:00Z",
+      "cpuPercent": 23,
+      "memoryPercent": 31,
+      "runningVms": 5
+    }
+  ]
+}
