@@ -21,6 +21,7 @@ export function DeveloperShell() {
       tone="light"
       brandLabel="Ascendra"
       brandSublabel="Workspaces"
+      homeHref="/app/machines"
       navItems={NAV_ITEMS}
       sidebarWidthClassName="w-sidebar-dev"
     >

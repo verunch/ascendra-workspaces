@@ -1,0 +1,6 @@
+.shadow-card_min-width {
+  min-width: fit-content;
+  min-width: -moz-fit-content;
+  min-width: -webkit-fit-content;
+  flex-shrink: 0;
+}

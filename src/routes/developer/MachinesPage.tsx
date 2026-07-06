@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   BookOpen,
   Cpu,
@@ -153,101 +154,13 @@ export function MachinesPage() {
             {timeOfDayGreeting()}, {data.developerName.split(" ")[0]} — {data.runningCount} of{" "}
             {data.vms.length} machines running, averaging {Math.round(data.avgCpuPercent)}% CPU.
           </p>
+          <p className="mt-1.5 max-w-measure text-body-sm text-text-muted">
+            You have multiple developer workspaces for different projects, environments and
+            experiments.
+          </p>
 
-          <Grid cols={4} className="mt-6">
-            <StatCard
-              label="Running VMs"
-              value={data.runningCount}
-              unit={`of ${data.vms.length}`}
-              icon={Monitor}
-            />
-            <StatCard
-              label="Avg CPU (running)"
-              value={Math.round(data.avgCpuPercent)}
-              unit="%"
-              icon={Cpu}
-            />
-            <StatCard
-              label="Avg memory (running)"
-              value={Math.round(data.avgMemoryPercent)}
-              unit="%"
-              icon={MemoryStick}
-            />
-            <StatCard
-              label="Est. monthly cost"
-              value={formatUsd(data.estimatedMonthlyCost)}
-              icon={DollarSign}
-            />
-          </Grid>
-
-          <ContentSection
-            title="Resource Overview"
-            description="Current utilization and allocation across your machines."
-            className="mt-8"
-          >
-            <Grid cols={2}>
-              <Card>
-                <CardHeader>
-                  <h3 className="text-title-sm text-text-heading">Utilization by machine</h3>
-                </CardHeader>
-                <CardContent>
-                  <UsageBarChart data={data.perVmUsage} />
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <h3 className="text-title-sm text-text-heading">Status distribution</h3>
-                </CardHeader>
-                <CardContent>
-                  <StatusDonutChart data={data.statusDistribution} />
-                </CardContent>
-              </Card>
-            </Grid>
-            <InfoCard
-              className="mt-4"
-              title="Allocated resources"
-              rows={[
-                { label: "Total vCPU", value: `${data.totalVCpu} cores` },
-                { label: "Total memory", value: `${data.totalMemoryGb} GB` },
-                { label: "Total disk", value: `${data.totalDiskGb} GB` },
-              ]}
-            />
-          </ContentSection>
-
-          <Grid cols={2} className="mt-8">
-            <ContentSection title="Recent Activity">
-              <Card>
-                <CardContent>
-                  {activityItems.length > 0 ? (
-                    <ActivityFeed items={activityItems} />
-                  ) : (
-                    <p className="text-body-sm text-text-muted">No recent activity.</p>
-                  )}
-                </CardContent>
-              </Card>
-            </ContentSection>
-
-            <ContentSection title="Quick Actions">
-              <div className="grid grid-cols-2 gap-3 max-sm:grid-cols-1">
-                <QuickActionCard icon={Plus} label="Create VM" description="Provision a new dev machine" />
-                <QuickActionCard
-                  icon={Rocket}
-                  label="Deploy Template"
-                  description="Launch from a saved template"
-                />
-                <QuickActionCard icon={Upload} label="Import Image" description="Bring your own base image" />
-                <QuickActionCard
-                  icon={BookOpen}
-                  label="Documentation"
-                  description="Guides and API reference"
-                />
-              </div>
-            </ContentSection>
-          </Grid>
-
-          <ContentSection title="Machines" className="mt-8">
-            <Card className="overflow-hidden">
-              <TableToolbar title="All machines" description={`${tableVms.length} of ${data.vms.length} shown`}>
+          <Card className="mt-6 overflow-hidden">
+            <TableToolbar title="Machines" description={`${tableVms.length} of ${data.vms.length} shown`}>
                 <FilterBar>
                   <SearchBar
                     value={search}
@@ -281,7 +194,8 @@ export function MachinesPage() {
                   description="Try a different search term or status filter."
                 />
               ) : (
-                <table className="w-full border-collapse text-body-sm">
+                <div className="overflow-x-auto">
+                <table className="w-full min-w-[900px] border-collapse text-body-sm">
                   <thead>
                     <tr className="border-b border-border bg-surface-subtle">
                       <th className="px-5 py-2.5 text-left text-overline text-text-muted">Name</th>
@@ -323,7 +237,14 @@ export function MachinesPage() {
 
                       return (
                         <tr key={vm.id} className="border-b border-border last:border-none hover:bg-bg">
-                          <td className="px-5 py-2.5 font-mono text-text">{vm.name}</td>
+                          <td className="px-5 py-2.5 font-mono text-text">
+                            <Link
+                              to={`/app/machines/${vm.id}`}
+                              className="rounded-sm hover:text-primary-700 hover:underline focus-visible:outline-none focus-visible:shadow-focus-ring"
+                            >
+                              {vm.name}
+                            </Link>
+                          </td>
                           <td className="px-3 py-2.5">
                             <StatusBadge status={vm.status} />
                           </td>
@@ -340,7 +261,7 @@ export function MachinesPage() {
                             {vm.diskUsagePercent}%
                           </td>
                           <td className="px-3 py-2.5 text-right">
-                            <Button variant="secondary" size="sm" disabled={!isRunning}>
+                            <Button variant="primary" size="sm" disabled={!isRunning}>
                               <ExternalLink className="size-3.5" /> Connect
                             </Button>
                           </td>
@@ -352,8 +273,105 @@ export function MachinesPage() {
                     })}
                   </tbody>
                 </table>
+                </div>
               )}
             </Card>
+
+          <ContentSection
+            title="Overview & Activity"
+            description="Secondary — aggregate usage, cost, and recent activity across your machines."
+            className="mt-10"
+          >
+            <Grid cols={4}>
+              <StatCard
+                label="Running VMs"
+                value={data.runningCount}
+                unit={`of ${data.vms.length}`}
+                icon={Monitor}
+              />
+              <StatCard
+                label="Avg CPU (running)"
+                value={Math.round(data.avgCpuPercent)}
+                unit="%"
+                icon={Cpu}
+              />
+              <StatCard
+                label="Avg memory (running)"
+                value={Math.round(data.avgMemoryPercent)}
+                unit="%"
+                icon={MemoryStick}
+              />
+              <StatCard
+                label="Est. monthly cost"
+                value={formatUsd(data.estimatedMonthlyCost)}
+                icon={DollarSign}
+              />
+            </Grid>
+
+            <Grid cols={2} className="mt-4">
+              <Card>
+                <CardHeader>
+                  <h3 className="text-title-sm text-text-heading">Utilization by machine</h3>
+                </CardHeader>
+                <CardContent>
+                  <UsageBarChart data={data.perVmUsage} />
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <h3 className="text-title-sm text-text-heading">Status distribution</h3>
+                </CardHeader>
+                <CardContent>
+                  <StatusDonutChart data={data.statusDistribution} />
+                </CardContent>
+              </Card>
+            </Grid>
+            <InfoCard
+              className="mt-4"
+              title="Allocated resources"
+              rows={[
+                { label: "Total vCPU", value: `${data.totalVCpu} cores` },
+                { label: "Total memory", value: `${data.totalMemoryGb} GB` },
+                { label: "Total disk", value: `${data.totalDiskGb} GB` },
+              ]}
+            />
+
+            <Grid cols={2} className="mt-4">
+              <Card>
+                <CardHeader>
+                  <h3 className="text-title-sm text-text-heading">Recent Activity</h3>
+                </CardHeader>
+                <CardContent>
+                  {activityItems.length > 0 ? (
+                    <ActivityFeed items={activityItems} />
+                  ) : (
+                    <p className="text-body-sm text-text-muted">No recent activity.</p>
+                  )}
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <h3 className="text-title-sm text-text-heading">Quick Actions</h3>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-2 gap-2 max-[1100px]:grid-cols-1">
+                    <QuickActionCard icon={Plus} label="Create VM" description="Provision a new dev machine" />
+                    <QuickActionCard
+                      icon={Rocket}
+                      label="Deploy Template"
+                      description="Launch from a saved template"
+                    />
+                    <QuickActionCard icon={Upload} label="Import Image" description="Bring your own base image" />
+                    <QuickActionCard
+                      icon={BookOpen}
+                      label="Documentation"
+                      description="Guides and API reference"
+                    />
+                  </div>
+                </CardContent>
+              </Card>
+            </Grid>
           </ContentSection>
         </>
       )}

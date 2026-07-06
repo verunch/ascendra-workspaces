@@ -11,17 +11,20 @@ export interface FleetTrendPoint {
 export interface FleetTrendChartProps {
   data: FleetTrendPoint[];
   className?: string;
+  ariaLabel?: string;
 }
 
-/** Line chart of aggregate CPU/Memory utilization over time (fleet-wide). */
-export function FleetTrendChart({ data, className }: FleetTrendChartProps) {
+/** Line chart of CPU/Memory utilization over time — reused for both fleet-wide and single-VM trends. */
+export function FleetTrendChart({
+  data,
+  className,
+  ariaLabel = "Line chart of aggregate CPU and memory utilization over time across the fleet.",
+}: FleetTrendChartProps) {
   const chartData = data.map((d) => ({
     ...d,
     label: new Date(d.timestamp).toLocaleTimeString(undefined, { hour: "2-digit" }),
   }));
-  const a11y = useChartAccessibility<HTMLDivElement>(
-    "Line chart of aggregate CPU and memory utilization over time across the fleet.",
-  );
+  const a11y = useChartAccessibility<HTMLDivElement>(ariaLabel);
 
   return (
     <div {...a11y} className={className} style={{ height: 260 }}>

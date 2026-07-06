@@ -44,13 +44,14 @@ export function EntryPage() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-bg px-6 py-12">
       <div className="mb-10 flex flex-col items-center text-center">
-        <div className="mb-4 flex size-11 items-center justify-center rounded-md bg-primary-700">
+        <div className="flex size-11 shrink-0 items-center justify-center rounded-md bg-primary-700">
           <div
             className="size-4 rotate-45 rounded-sm border-2 border-primary-300"
             aria-hidden="true"
           />
         </div>
-        <h1 className="text-display text-text-heading">Ascendra Workspaces</h1>
+        <img src="/company-logo.png" alt="Ascendra" className="mt-[0.3rem] h-6 w-auto object-contain" />
+        <h1 className="mt-8 text-display text-text-heading">Ascendra Workspaces</h1>
         <p className="mt-2 max-w-measure text-body text-text-secondary">
           Choose how you&apos;d like to continue. This switcher stands in for sign-in — no
           account is required.

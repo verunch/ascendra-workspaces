@@ -178,7 +178,8 @@ export function TemplatesPage() {
                 description="Create your first VM template to get started."
               />
             ) : (
-              <table className="w-full border-collapse text-body-sm">
+              <div className="overflow-x-auto">
+              <table className="w-full min-w-[720px] border-collapse text-body-sm">
                 <thead>
                   <tr className="border-b border-border bg-surface-subtle">
                     <th className="px-5 py-2.5 text-left text-overline text-text-muted">Name</th>
@@ -214,6 +215,7 @@ export function TemplatesPage() {
                   ))}
                 </tbody>
               </table>
+              </div>
             )}
           </Card>
         </>

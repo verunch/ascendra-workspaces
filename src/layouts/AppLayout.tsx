@@ -6,6 +6,7 @@ export interface AppLayoutProps {
   tone: "light" | "dark";
   brandLabel: string;
   brandSublabel: string;
+  homeHref: string;
   navItems: SidebarNavItem[];
   sidebarWidthClassName: string;
   children: ReactNode;
@@ -20,6 +21,7 @@ export function AppLayout({
   tone,
   brandLabel,
   brandSublabel,
+  homeHref,
   navItems,
   sidebarWidthClassName,
   children,
@@ -30,6 +32,7 @@ export function AppLayout({
         tone={tone}
         brandLabel={brandLabel}
         brandSublabel={brandSublabel}
+        homeHref={homeHref}
         items={navItems}
         widthClassName={sidebarWidthClassName}
       />

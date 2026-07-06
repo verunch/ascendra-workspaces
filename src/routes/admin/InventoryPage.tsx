@@ -96,6 +96,11 @@ export function InventoryPage() {
     return sortDir === "asc" ? " ↑" : " ↓";
   }
 
+  function sortAriaValue(key: SortKey): "ascending" | "descending" | "none" {
+    if (sortKey !== key) return "none";
+    return sortDir === "asc" ? "ascending" : "descending";
+  }
+
   return (
     <PageContainer>
       <PageHeader
@@ -155,7 +160,8 @@ export function InventoryPage() {
               description="Try a different search term or status filter."
             />
           ) : (
-            <table className="w-full border-collapse text-body-sm">
+            <div className="overflow-x-auto">
+            <table className="w-full min-w-[820px] border-collapse text-body-sm">
               <thead>
                 <tr className="border-b border-border bg-surface-subtle">
                   <th className="px-5 py-2.5 text-left text-overline text-text-muted">Name</th>
@@ -163,22 +169,40 @@ export function InventoryPage() {
                   <th className="px-3 py-2.5 text-left text-overline text-text-muted">Template</th>
                   <th className="px-3 py-2.5 text-left text-overline text-text-muted">Status</th>
                   <th
-                    className="cursor-pointer select-none px-3 py-2.5 text-right text-overline text-text-muted"
-                    onClick={() => toggleSort("cpuUsagePercent")}
+                    className="px-3 py-2.5 text-right text-overline text-text-muted"
+                    aria-sort={sortAriaValue("cpuUsagePercent")}
                   >
-                    CPU{sortIndicator("cpuUsagePercent")}
+                    <button
+                      type="button"
+                      onClick={() => toggleSort("cpuUsagePercent")}
+                      className="select-none rounded-sm focus-visible:outline-none focus-visible:shadow-focus-ring"
+                    >
+                      CPU{sortIndicator("cpuUsagePercent")}
+                    </button>
                   </th>
                   <th
-                    className="cursor-pointer select-none px-3 py-2.5 text-right text-overline text-text-muted"
-                    onClick={() => toggleSort("memoryUsagePercent")}
+                    className="px-3 py-2.5 text-right text-overline text-text-muted"
+                    aria-sort={sortAriaValue("memoryUsagePercent")}
                   >
-                    Memory{sortIndicator("memoryUsagePercent")}
+                    <button
+                      type="button"
+                      onClick={() => toggleSort("memoryUsagePercent")}
+                      className="select-none rounded-sm focus-visible:outline-none focus-visible:shadow-focus-ring"
+                    >
+                      Memory{sortIndicator("memoryUsagePercent")}
+                    </button>
                   </th>
                   <th
-                    className="cursor-pointer select-none px-5 py-2.5 text-right text-overline text-text-muted"
-                    onClick={() => toggleSort("diskUsagePercent")}
+                    className="px-5 py-2.5 text-right text-overline text-text-muted"
+                    aria-sort={sortAriaValue("diskUsagePercent")}
                   >
-                    Disk{sortIndicator("diskUsagePercent")}
+                    <button
+                      type="button"
+                      onClick={() => toggleSort("diskUsagePercent")}
+                      className="select-none rounded-sm focus-visible:outline-none focus-visible:shadow-focus-ring"
+                    >
+                      Disk{sortIndicator("diskUsagePercent")}
+                    </button>
                   </th>
                 </tr>
               </thead>
@@ -197,7 +221,11 @@ export function InventoryPage() {
                       <td className="px-3 py-2.5">
                         <div className="flex items-center gap-2">
                           <StatusBadge status={vm.status} />
-                          {isIdle && <Badge variant="warning">Idle</Badge>}
+                          {isIdle && (
+                            <Badge variant="warning" dot>
+                              Idle
+                            </Badge>
+                          )}
                         </div>
                       </td>
                       <td className="px-3 py-2.5 text-right font-mono tabular-nums text-text">
@@ -214,6 +242,7 @@ export function InventoryPage() {
                 })}
               </tbody>
             </table>
+            </div>
           )}
         </Card>
       )}

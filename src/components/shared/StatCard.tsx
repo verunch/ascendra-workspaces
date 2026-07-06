@@ -36,7 +36,7 @@ export function StatCard({ label, value, unit, delta, icon: Icon, className }: S
   const tone = delta ? deltaTone(delta) : null;
 
   return (
-    <div className={cn("rounded-md border border-border bg-surface p-5 shadow-card", className)}>
+    <div className={cn("rounded-md border border-border bg-surface p-5 shadow-card shadow-card_min-width", className)}>
       <div className="flex items-start justify-between gap-3">
         <p className="text-caption text-text-muted">{label}</p>
         {Icon && <Icon className="size-4 shrink-0 text-text-muted" aria-hidden="true" />}

@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { Link, useParams } from "react-router-dom";
 import { ExternalLink, FilePlus2, Monitor, Play, PlayCircle, RotateCcw, Square } from "lucide-react";
 import { PageContainer } from "@/components/shared/PageContainer";
@@ -7,7 +8,7 @@ import { Grid } from "@/components/shared/Grid";
 import { InfoCard } from "@/components/shared/InfoCard";
 import { StatusBadge } from "@/components/shared/StatusBadge";
 import { ActivityFeed, type ActivityItem } from "@/components/shared/ActivityFeed";
-import { UsageBarChart } from "@/components/shared/UsageBarChart";
+import { FleetTrendChart } from "@/components/shared/FleetTrendChart";
 import { LoadingSkeleton } from "@/components/shared/LoadingSkeleton";
 import { ErrorState } from "@/components/shared/ErrorState";
 import { EmptyState } from "@/components/shared/EmptyState";
@@ -18,6 +19,7 @@ import { useTemplates } from "@/hooks/useTemplates";
 import { useVmLifecycle, type VmLifecycleAction } from "@/hooks/useVmLifecycle";
 import { CURRENT_DEVELOPER_ID } from "@/hooks/useDeveloperDashboard";
 import { formatDuration, formatRelativeTime } from "@/lib/format";
+import { generateVmUsageTrend } from "@/lib/vmUsageTrend";
 import type { VMStatus } from "@/types/vm";
 
 /**
@@ -54,6 +56,7 @@ export function MachineDetailPage() {
   const isLoading = vmQuery.isLoading || templatesQuery.isLoading;
   const isError = vmQuery.isError || templatesQuery.isError;
   const vm = vmQuery.data;
+  const usageTrend = useMemo(() => (vm ? generateVmUsageTrend(vm) : []), [vm]);
 
   if (isLoading) {
     return (
@@ -188,7 +191,7 @@ export function MachineDetailPage() {
 
         <Card>
           <CardHeader>
-            <h3 className="text-title-sm text-text-heading">Current usage</h3>
+            <h3 className="text-title-sm text-text-heading">Usage over time</h3>
           </CardHeader>
           <CardContent>
             {vm.status === "stopped" ? (
@@ -197,20 +200,12 @@ export function MachineDetailPage() {
               </p>
             ) : (
               <>
-                <UsageBarChart
-                  data={[
-                    {
-                      name: vm.name,
-                      cpu: vm.cpuUsagePercent,
-                      memory: vm.memoryUsagePercent,
-                      disk: vm.diskUsagePercent,
-                    },
-                  ]}
-                  ariaLabel={`Current CPU, memory, and disk utilization for ${vm.name}`}
+                <FleetTrendChart
+                  data={usageTrend}
+                  ariaLabel={`Line chart of CPU and memory utilization for ${vm.name} over the last 24 hours.`}
                 />
                 <p className="mt-2 text-caption text-text-muted">
-                  Showing current utilization — historical trend data isn't available in the
-                  mock dataset yet.
+                  CPU and memory over the last 24 hours · Disk: {vm.diskUsagePercent}%
                 </p>
               </>
             )}

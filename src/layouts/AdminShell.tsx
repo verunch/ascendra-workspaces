@@ -25,6 +25,7 @@ export function AdminShell() {
       tone="dark"
       brandLabel="Ascendra"
       brandSublabel="Admin"
+      homeHref="/admin/overview"
       navItems={NAV_ITEMS}
       sidebarWidthClassName="w-sidebar-admin"
     >
