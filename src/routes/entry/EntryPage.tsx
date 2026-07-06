@@ -50,7 +50,11 @@ export function EntryPage() {
             aria-hidden="true"
           />
         </div>
-        <img src="/company-logo.png" alt="Ascendra" className="mt-[0.3rem] h-6 w-auto object-contain" />
+        <img
+          src={`${import.meta.env.BASE_URL}company-logo.png`}
+          alt="Ascendra"
+          className="mt-[0.3rem] h-6 w-auto object-contain"
+        />
         <h1 className="mt-8 text-display text-text-heading">Ascendra Workspaces</h1>
         <p className="mt-2 max-w-measure text-body text-text-secondary">
           Choose how you&apos;d like to continue. This switcher stands in for sign-in — no

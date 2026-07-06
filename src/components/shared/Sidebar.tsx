@@ -62,7 +62,7 @@ export function Sidebar({
             )}
           >
             <img
-              src="/company-logo.png"
+              src={`${import.meta.env.BASE_URL}company-logo.png`}
               alt={brandLabel}
               className="h-4 w-auto max-w-[110px] object-contain max-md:h-auto max-md:w-full max-md:max-w-none"
             />
